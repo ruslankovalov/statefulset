@@ -1,11 +1,12 @@
 version: '3'
 services:
   nginx:
-    image: nginx:latest
+    image: stateful-nginx
     ports:
       - 80:80
       - 443:443
     links:
       - php
   php:
-    image: php:7-fpm
+    image: stateful-php-fpm
+
