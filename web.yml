@@ -5,14 +5,7 @@ services:
     ports:
       - 80:80
       - 443:443
-    volumes:
-      - ./app:/app
-      - ./docker/nginx/ssl:/ssl
-      - ./docker/nginx/test_ssl.conf:/etc/nginx/conf.d/test_ssl.conf
-    command: [nginx-debug, '-g', 'daemon off;']
     links:
       - php
   php:
     image: php:7-fpm
-    volumes:
-      - ./app:/app
